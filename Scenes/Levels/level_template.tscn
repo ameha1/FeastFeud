@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceam0tf5kb65n"]
+
+[ext_resource type="ArrayMesh" path="res://Models/Architecture/floorFull.mesh" id="1_b2des"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_flfhp"]
+data = PackedVector3Array(0, 0.25, 0, 0, 0, 0, 0, 0.25, 5, 0, 0, 5, 0, 0.25, 5, 0, 0, 0, 0, 0.25, 0, 0, 0.25, 5, -5, 0.25, 0, -5, 0.25, 5, -5, 0.25, 0, 0, 0.25, 5, 0, 0, 5, 0, 0, 0, -5, 0, 5, -5, 0, 0, -5, 0, 5, 0, 0, 0, 0, 0, 5, -5, 0, 5, 0, 0.25, 5, -5, 0.25, 5, 0, 0.25, 5, -5, 0, 5, -5, 0, 0, 0, 0, 0, -5, 0.25, 0, 0, 0.25, 0, -5, 0.25, 0, 0, 0, 0, -5, 0, 0, -5, 0.25, 0, -5, 0, 5, -5, 0.25, 5, -5, 0, 5, -5, 0.25, 0)
+
+[node name="LevelTemplate" type="Node3D"]
+
+[node name="FloorFull" type="MeshInstance3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 2, 0, -2)
+mesh = ExtResource("1_b2des")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorFull"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorFull/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_flfhp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.642788, -0.323744, 0.694272, 0, 0.906308, 0.422618, -0.766044, 0.271654, -0.582563, 5, 9, -4)
