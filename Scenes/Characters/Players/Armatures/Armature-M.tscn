@@ -1211,7 +1211,7 @@ master_player = NodePath("../AnimationPlayer")
 active = true
 data = {
 "active": true,
-"connections": [ "IdleAnim", "blend2", 0, "RunAnim", "blend2", 1, "blend2", "out", 0 ],
+"connections": [ "IdleAnim", "Move", 0, "RunAnim", "Move", 1, "Move", "out", 0 ],
 "master": NodePath("../AnimationPlayer"),
 "nodes": [ {
 "filter": [  ],
@@ -1222,7 +1222,7 @@ data = {
 }, {
 "blend": 0.0,
 "filter": [  ],
-"id": "blend2",
+"id": "Move",
 "position": Vector2( 240, 87 ),
 "type": "blend2"
 }, {
