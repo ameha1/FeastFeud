@@ -4,9 +4,6 @@
 [ext_resource path="res://Models/Furniture/BigSofa.mesh" type="ArrayMesh" id=2]
 [ext_resource path="res://Scenes/Characters/Players/PlayerM.tscn" type="PackedScene" id=3]
 
-[sub_resource type="ConcavePolygonShape" id=1]
-data = PoolVector3Array( 0, 0.25, 0, 0, 0, 0, 0, 0.25, 5, 0, 0, 5, 0, 0.25, 5, 0, 0, 0, 0, 0.25, 0, 0, 0.25, 5, -5, 0.25, 0, -5, 0.25, 5, -5, 0.25, 0, 0, 0.25, 5, 0, 0, 5, 0, 0, 0, -5, 0, 5, -5, 0, 0, -5, 0, 5, 0, 0, 0, 0, 0, 5, -5, 0, 5, 0, 0.25, 5, -5, 0.25, 5, 0, 0.25, 5, -5, 0, 5, -5, 0, 0, 0, 0, 0, -5, 0.25, 0, 0, 0.25, 0, -5, 0.25, 0, 0, 0, 0, -5, 0, 0, -5, 0.25, 0, -5, 0, 5, -5, 0.25, 5, -5, 0, 5, -5, 0.25, 0 )
-
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 2.20396, 0.327303, 0.596117, 2.72074, 1.92507, 1.01918, 2.20396, 1.92507, 1.01918, 2.20396, 1.92507, -0.531593, 2.6113, 0.781397, -0.467857, 2.67372, 0.327303, 0.97197, 2.72074, 1.83107, -0.531593, 2.17598, 0.7759, -0.479203, 2.20396, 0.327303, 0.97197, 2.67372, 0.327303, 0.596117, 2.177, 0.77726, 0.833, 2.17153, 1.4824, -0.491438, 2.6973, 1.85864, -0.467117, 2.72074, 1.83107, 1.01918, 2.18629, 1.46273, 0.727784, 2.20396, 1.83107, 1.01918 )
 
@@ -25,19 +22,13 @@ points = PoolVector3Array( 2.248, 1.51604, 0.863509, 0.0419948, 0.7759, -1.14473
 [sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( -0.00480342, 1.50203, 0.784085, -2.16566, 0.7759, -1.14473, -2.18721, 1.9111, -1.16491, -2.3047, 1.5156, 0.861709, -0.0310702, 1.9111, -1.16491, -0.0530853, 0.776148, 0.833, -0.052619, 0.7759, -1.14473, -2.1652, 0.776148, 0.833, -0.00480342, 1.92507, -0.860398, -2.21348, 1.92507, -0.860398, -0.00480342, 1.17328, 0.8782, -2.21348, 1.17328, 0.8782 )
 
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( 0, 0.25, 0, 0, 0, 0, 0, 0.25, 5, 0, 0, 5, 0, 0.25, 5, 0, 0, 0, 0, 0.25, 0, 0, 0.25, 5, -5, 0.25, 0, -5, 0.25, 5, -5, 0.25, 0, 0, 0.25, 5, 0, 0, 5, 0, 0, 0, -5, 0, 5, -5, 0, 0, -5, 0, 5, 0, 0, 0, 0, 0, 5, -5, 0, 5, 0, 0.25, 5, -5, 0.25, 5, 0, 0.25, 5, -5, 0, 5, -5, 0, 0, 0, 0, 0, -5, 0.25, 0, 0, 0.25, 0, -5, 0.25, 0, 0, 0, 0, -5, 0, 0, -5, 0.25, 0, -5, 0, 5, -5, 0.25, 5, -5, 0, 5, -5, 0.25, 0 )
+
 [node name="LevelTemplate" type="Spatial"]
 
-[node name="floorFull" type="MeshInstance" parent="."]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 2.19185, 0, -2.19244 )
-mesh = ExtResource( 1 )
-
-[node name="StaticBody" type="StaticBody" parent="floorFull"]
-
-[node name="CollisionShape" type="CollisionShape" parent="floorFull/StaticBody"]
-shape = SubResource( 1 )
-
 [node name="Sofa" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1472, 11.5791, 16.5471 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.1472, 11.5791, 47.5471 )
 mass = 2.04082
 
 [node name="BigSofa" type="MeshInstance" parent="Sofa"]
@@ -75,3 +66,12 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9474, 0.599019, 26.8066 )
+
+[node name="floorFull" type="MeshInstance" parent="."]
+transform = Transform( 10, 0, 0, 0, 2, 0, 0, 0, 10, -23.8274, -0.474113, 23.4669 )
+mesh = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="floorFull"]
+
+[node name="CollisionShape" type="CollisionShape" parent="floorFull/StaticBody"]
+shape = SubResource( 8 )
