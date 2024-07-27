@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Architecture/wallWindowSlide.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Architecture/wallDoorwayWide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Architecture/wallWindow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Architecture/wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Architecture/wallDoorway.tscn" type="PackedScene" id=6]
+
+[node name="Level1" instance=ExtResource( 1 )]
+
+[node name="Player" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9024, 11.144, 30.2566 )
+
+[node name="floorFull" parent="." index="2"]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, -23.8274, 0.525887, 23.4669 )
+
+[node name="CollisionShape" parent="floorFull/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="wall20" parent="Walls" index="0" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.47, 0.69, 123.235 )
+
+[node name="wall37" parent="Walls" index="1" instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -123.055, 0.69, 129.145 )
+
+[node name="wall39" parent="Walls" index="2" instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -122.94, 0.69, 34.62 )
+
+[node name="wall100" parent="Walls" index="3" instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -84.645, 0.69, 43.585 )
+
+[node name="wall101" parent="Walls" index="4" instance=ExtResource( 5 )]
+transform = Transform( -0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -123.515, 0.69, 43.815 )
+
+[node name="wall103" parent="Walls" index="5" instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -84.645, 0.69, 33.645 )
+
+[node name="wall60" parent="Walls" index="6" instance=ExtResource( 5 )]
+transform = Transform( -0.5, 0, 7.54979e-08, 0, 0.5, 0, -7.54979e-08, 0, -0.5, -123.28, 0.69, 23.76 )
+
+[node name="wall61" parent="Walls" index="7" instance=ExtResource( 5 )]
+transform = Transform( 3.7749e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.7749e-08, -23.7295, 0.69, 23.525 )
+
+[node name="wall81" parent="Walls" index="8" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, -4.47035e-08, 0, 0.5, 0, 4.47035e-08, 0, 0.5, -23.46, 0.69, 43.545 )
+
+[node name="wall88" parent="Walls" index="9" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, -4.47035e-08, 0, 0.5, 0, 4.47035e-08, 0, 0.5, -63.25, 0.69, 43.545 )
+visible = false
+
+[node name="wallDoorway" parent="Walls" index="10" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -58.4765, 0.699302, 43.5244 )
+
+[node name="wallDoorway2" parent="Walls" index="11" instance=ExtResource( 6 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -84.6965, 0.699302, 38.5794 )
+
+[node name="wallDoorwayWide" parent="Walls" index="12" instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -43.5216, 0.02589, 71.2764 )
+
+[node name="wallWindow" parent="Walls" index="13" instance=ExtResource( 4 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -54.0561, 0.0258895, 72.0646 )
+
+[node name="wallWindow2" parent="Walls" index="14" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -122.941, 0.715889, 28.5946 )
+
+[node name="wallWindow3" parent="Walls" index="15" instance=ExtResource( 4 )]
+transform = Transform( -2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -122.941, 0.715889, 39.4046 )
+
+[node name="wallWindowSlide" parent="Walls" index="16" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -49.3586, 0.02589, 71.9294 )
